@@ -10,8 +10,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        dark: {
+          high: "var(--dark-high)",
+          mid: "var(--dark-mid)",
+          low: "var(--dark-low)",
+          min: "var(--dark-min)",
+        },
+        neutral: "var(--neutral)",
+        light: {
+          high: "var(--light-high)",
+          mid: "var(--light-mid)",
+          low: "var(--light-low)",
+          min: "var(--light-min)",
+        },
       },
     },
   },

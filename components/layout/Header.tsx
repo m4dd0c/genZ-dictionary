@@ -51,11 +51,11 @@ const DesktopHeader = ({
   changeMode: IThemeContext["changeMode"];
 }) => {
   return (
-    <div className="flex items-center max-md:hidden">
-      <div className="w-1/2 rounded-br-3xl bg-white text-right text-4xl font-extrabold leading-loose dark:bg-neutral-900">
+    <div className="bg-high text-low flex h-16 items-center max-md:hidden">
+      <div className="bg-mid w-1/2 rounded-br-3xl text-right text-4xl font-extrabold leading-loose">
         <h1 className="mx-10">GenZ dictionary</h1>
       </div>
-      <div className="mx-10 flex w-1/2 justify-end gap-5 rounded-tl-3xl dark:bg-transparent">
+      <div className="bg-high flex h-full w-1/2 items-center justify-end gap-5 px-10">
         {menuItems.map((item) => (
           <Link key={item.id} href={item.link}>
             {item.label}

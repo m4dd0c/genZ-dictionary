@@ -6,3 +6,55 @@
   margin: 0;
   padding: 0;
 }
+
+/*variables*/
+/*different level of contrast*/
+:root {
+  --dark-high: #030712;
+  --dark-mid: #111827;
+  --dark-low: #1f2937;
+  --dark-min: #374151;
+
+  --neutral: #6b7280;
+
+  --light-high: #f9fafb;
+  --light-mid: #e5e7eb;
+  --light-low: #d1d5db;
+  --light-min: #9ca3af;
+}
+
+/*tailwind utils*/
+@layer utilities {
+  /*bg*/
+  .bg-high {
+    @apply dark:bg-dark-high bg-light-high;
+  }
+  .bg-mid {
+    @apply dark:bg-dark-mid bg-light-mid;
+  }
+  .bg-low {
+    @apply dark:bg-dark-low bg-light-low;
+  }
+  .bg-min {
+    @apply dark:bg-dark-min bg-light-min;
+  }
+  .bg-neutral {
+    @apply bg-neutral;
+  }
+  .text-neutral {
+    @apply text-neutral;
+  }
+  /*text*/
+  .text-high {
+    @apply text-dark-high dark:text-light-high;
+  }
+  .text-mid {
+    @apply text-dark-mid dark:text-light-mid;
+  }
+  .text-low {
+    @apply text-dark-low dark:text-light-low;
+  }
+  .text-min {
+    @apply text-dark-min dark:text-light-min;
+  }
+}
