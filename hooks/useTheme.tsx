@@ -1,4 +1,5 @@
 "use client";
+import Header from "@/components/layout/Header";
 import React, { createContext, useContext, useState } from "react";
 
 interface IThemeContext {}
@@ -8,6 +9,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [mode, setMode] = useState<"dark" | "light">("dark");
   return (
     <themeContext.Provider value={{ mode, setMode }}>
+      <Header />
       {children}
     </themeContext.Provider>
   );

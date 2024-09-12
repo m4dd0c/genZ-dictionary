@@ -13,7 +13,10 @@
     --foreground: #ededed;
   }
 }
-
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   color: var(--foreground);
   background: var(--background);
