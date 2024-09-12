@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Header from "@/components/layout/Header";
 import "../globals.css";
 import React from "react";
 import { Poppins } from "next/font/google";
@@ -21,7 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

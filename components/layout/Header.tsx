@@ -1,4 +1,6 @@
 "use client";
+import useTheme from "@/hooks/useTheme";
+import { IThemeContext } from "@/types/types";
 // import useTheme from "@/hooks/useTheme";
 import Link from "next/link";
 
@@ -25,16 +27,29 @@ export const menuItems = [
   },
 ];
 
-const MobileHeader = () => {
+const MobileHeader = ({
+  changeMode,
+}: {
+  changeMode: IThemeContext["changeMode"];
+}) => {
   return (
     <div className="flex md:hidden">
       <div>Logo</div>
-      <div>Menu</div>
+      <div>
+        {/* change theme mode */}
+        <button className="rounded-md border px-2" onClick={() => changeMode()}>
+          &times;
+        </button>
+      </div>
     </div>
   );
 };
 
-const DesktopHeader = () => {
+const DesktopHeader = ({
+  changeMode,
+}: {
+  changeMode: IThemeContext["changeMode"];
+}) => {
   return (
     <div className="flex items-center max-md:hidden">
       <div className="w-1/2 rounded-br-3xl bg-white text-right text-4xl font-extrabold leading-loose dark:bg-neutral-900">
@@ -47,10 +62,7 @@ const DesktopHeader = () => {
           </Link>
         ))}
         {/* change theme mode */}
-        <button
-          className="rounded-md border px-2"
-          onClick={() => console.log("change mode")}
-        >
+        <button className="rounded-md border px-2" onClick={() => changeMode()}>
           &times;
         </button>
       </div>
@@ -59,11 +71,11 @@ const DesktopHeader = () => {
 };
 
 const Header = () => {
-  // const { changeMode } = useTheme();
+  const { changeMode } = useTheme();
   return (
     <div>
-      <MobileHeader />
-      <DesktopHeader />
+      <MobileHeader changeMode={changeMode} />
+      <DesktopHeader changeMode={changeMode} />
     </div>
   );
 };
