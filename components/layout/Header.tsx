@@ -94,10 +94,10 @@ const DesktopHeader = ({
   mode: TMode;
 }) => {
   return (
-    <div className="bg-high text-low flex h-16 items-center max-lg:hidden">
+    <div className="bg-high text-low fixed flex h-16 w-full items-center justify-between max-lg:hidden">
       <div className="bg-mid flex h-full w-1/2 items-center justify-center gap-4 rounded-br-3xl font-extrabold leading-loose">
-        <div className="relative w-4/6 text-center text-sm font-normal">
-          <p className="line-clamp-1 w-full opacity-80">
+        <div className="relative w-fit text-center text-sm font-normal">
+          <p className="line-clamp-1 opacity-80">
             GOAT•BT•STFU•GTG•BUZZ•VIBE•SKIBIDI•RIZZ•W•L•MID•NPC•
           </p>
           <div className="pointer-events-none absolute inset-y-0 left-0 z-40 w-7 bg-gradient-to-r from-light-mid to-transparent dark:from-dark-mid" />
@@ -128,7 +128,7 @@ const DesktopHeader = ({
 const Header = () => {
   const { changeMode, mode } = useTheme();
   return (
-    <div>
+    <div className="">
       <MobileHeader mode={mode} changeMode={changeMode} />
       <DesktopHeader mode={mode} changeMode={changeMode} />
     </div>
