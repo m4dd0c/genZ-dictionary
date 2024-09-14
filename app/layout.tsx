@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
-import "../globals.css";
+import "./globals.css";
 import React from "react";
 import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/hooks/useTheme";
@@ -21,10 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
+      <body className={`${poppins.className} bg-high antialiased`}>
         <ThemeProvider>
           <Header />
-          <div className="bg-high h-screen overflow-y-auto px-2 pb-2 pt-16">
+          <div className=" bg-high h-screen overflow-y-auto px-2 pb-2 pt-16">
             {children}
           </div>
         </ThemeProvider>

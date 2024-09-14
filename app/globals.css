@@ -6,8 +6,6 @@
   margin: 0;
   padding: 0;
 }
-<<<<<<< Updated upstream
-=======
 
 body::-webkit-scrollbar {
   visibility: hidden;
@@ -70,4 +68,3 @@ body::-webkit-scrollbar {
     @apply shadow-light dark:shadow-dark;
   }
 }
->>>>>>> Stashed changes
