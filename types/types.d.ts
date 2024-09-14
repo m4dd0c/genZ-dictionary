@@ -1,8 +1,8 @@
 import React from "react";
-type IMode = "dark" | "light";
+type TMode = "dark" | "light";
 
 interface IThemeContext {
-  changeMode: (mode?: IMode) => void;
-  mode: IMode;
-  setMode: React.Dispatch<React.SetStateAction<IMode>>;
+  changeMode: (mode?: TMode) => void;
+  mode: TMode;
+  setMode: React.Dispatch<React.SetStateAction<TMode>>;
 }

@@ -1,8 +1,10 @@
 "use client";
 import useTheme from "@/hooks/useTheme";
-import { IThemeContext } from "@/types/types";
+import { IThemeContext, TMode } from "@/types/types";
 // import useTheme from "@/hooks/useTheme";
 import Link from "next/link";
+import { useState } from "react";
+import { IoClose, IoMenu, IoMoon, IoSunny } from "react-icons/io5";
 
 export const menuItems = [
   {
@@ -29,17 +31,48 @@ export const menuItems = [
 
 const MobileHeader = ({
   changeMode,
+  mode,
 }: {
   changeMode: IThemeContext["changeMode"];
+  mode: TMode;
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="flex md:hidden">
-      <div>Logo</div>
-      <div>
+    <div className="text-low bg-high fixed inset-x-0 top-0 flex items-center transition-all lg:hidden">
+      <div className="bg-mid flex h-14 w-full items-center rounded-br-3xl text-center text-sm font-extrabold leading-loose sm:text-lg md:text-center md:text-xl">
+        <h1 className="mx-auto line-clamp-1 inline-block">GenZ dictionary</h1>
+      </div>
+      <div className="bg-high flex h-14 items-center justify-end gap-5 px-5 sm:px-10">
         {/* change theme mode */}
-        <button className="rounded-md border px-2" onClick={() => changeMode()}>
-          &times;
+        <button
+          className="shadow-input rounded-md p-2 outline-none"
+          onClick={() => changeMode()}
+        >
+          {mode === "light" ? <IoSunny /> : <IoMoon />}
         </button>
+        <button
+          className="shadow-input rounded-md p-2 outline-none"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {!isOpen ? <IoMenu /> : <IoClose />}
+        </button>
+      </div>
+      {/* menu */}
+      <div
+        className={`${isOpen ? "block" : "hidden"} bg-high absolute inset-x-0 top-14 h-screen overflow-y-hidden`}
+      >
+        <div className="mx-auto w-fit space-y-6 py-10">
+          {menuItems.map((item) => (
+            <Link
+              key={item.id}
+              onClick={() => setIsOpen(false)}
+              className="block"
+              href={item.link}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -47,13 +80,21 @@ const MobileHeader = ({
 
 const DesktopHeader = ({
   changeMode,
+  mode,
 }: {
   changeMode: IThemeContext["changeMode"];
+  mode: TMode;
 }) => {
   return (
+<<<<<<< Updated upstream
     <div className="flex items-center max-md:hidden">
       <div className="w-1/2 rounded-br-3xl bg-white text-right text-4xl font-extrabold leading-loose dark:bg-neutral-900">
         <h1 className="mx-10">GenZ dictionary</h1>
+=======
+    <div className="bg-high text-low flex h-16 items-center max-lg:hidden">
+      <div className="bg-mid flex h-full w-1/2 items-center rounded-br-3xl text-right text-4xl font-extrabold leading-loose max-lg:text-xl">
+        <h1 className="mx-20">GenZ dictionary</h1>
+>>>>>>> Stashed changes
       </div>
       <div className="mx-10 flex w-1/2 justify-end gap-5 rounded-tl-3xl dark:bg-transparent">
         {menuItems.map((item) => (
@@ -62,8 +103,11 @@ const DesktopHeader = ({
           </Link>
         ))}
         {/* change theme mode */}
-        <button className="rounded-md border px-2" onClick={() => changeMode()}>
-          &times;
+        <button
+          className="shadow-input rounded-md p-2 outline-none"
+          onClick={() => changeMode()}
+        >
+          {mode === "light" ? <IoSunny /> : <IoMoon />}
         </button>
       </div>
     </div>
@@ -71,11 +115,11 @@ const DesktopHeader = ({
 };
 
 const Header = () => {
-  const { changeMode } = useTheme();
+  const { changeMode, mode } = useTheme();
   return (
     <div>
-      <MobileHeader changeMode={changeMode} />
-      <DesktopHeader changeMode={changeMode} />
+      <MobileHeader mode={mode} changeMode={changeMode} />
+      <DesktopHeader mode={mode} changeMode={changeMode} />
     </div>
   );
 };

@@ -24,7 +24,9 @@ export default function RootLayout({
       <body className={`${poppins.className} antialiased`}>
         <ThemeProvider>
           <Header />
-          {children}
+          <div className="bg-high h-screen overflow-y-auto px-2 pb-2 pt-16">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
