@@ -8,7 +8,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [mode, setMode] = useState<"dark" | "light">("dark");
 
   const changeMode: IThemeContext["changeMode"] = (mode) => {
-    console.log("changing mode", mode);
     setMode((prev) => {
       const val = mode || (prev === "dark" ? "light" : "dark");
       // set to localStorage
