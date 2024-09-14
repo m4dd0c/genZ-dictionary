@@ -38,8 +38,17 @@ const MobileHeader = ({
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="text-low bg-high fixed inset-x-0 top-0 flex items-center transition-all lg:hidden">
-      <div className="bg-mid flex h-14 w-full items-center rounded-br-3xl text-center text-sm font-extrabold leading-loose sm:text-lg md:text-center md:text-xl">
-        <h1 className="mx-auto inline-block">Z Slang</h1>
+      <div className="bg-mid flex h-14 w-full items-center rounded-br-3xl text-center text-2xl font-extrabold leading-loose md:text-center">
+        <div className="relative mx-auto w-fit text-center text-sm font-normal max-sm:hidden">
+          <p className="mx-auto line-clamp-1 opacity-80">
+            GOAT•BT•STFU•GTG•BUZZ•VIBE•CHAT•RIZZ•W•L•MID•NPC
+          </p>
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-40 w-7 bg-gradient-to-r from-light-mid to-transparent dark:from-dark-mid" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-40 w-7 bg-gradient-to-l from-light-mid to-transparent dark:from-dark-mid" />
+        </div>
+        <div className="w-1/3 max-sm:w-full">
+          <h1 className="inline-block">Z Slang</h1>
+        </div>
       </div>
       <div className="bg-high flex h-14 items-center justify-end gap-5 px-5 sm:px-10">
         {/* change theme mode */}
@@ -86,8 +95,17 @@ const DesktopHeader = ({
 }) => {
   return (
     <div className="bg-high text-low flex h-16 items-center max-lg:hidden">
-      <div className="bg-mid flex h-full w-1/2 items-center rounded-br-3xl text-right text-4xl font-extrabold leading-loose max-lg:text-xl">
-        <h1 className="mx-20">Z Slang</h1>
+      <div className="bg-mid flex h-full w-1/2 items-center justify-center gap-4 rounded-br-3xl font-extrabold leading-loose">
+        <div className="relative w-4/6 text-center text-sm font-normal">
+          <p className="line-clamp-1 w-full opacity-80">
+            GOAT•BT•STFU•GTG•BUZZ•VIBE•SKIBIDI•RIZZ•W•L•MID•NPC•
+          </p>
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-40 w-7 bg-gradient-to-r from-light-mid to-transparent dark:from-dark-mid" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-40 w-7 bg-gradient-to-l from-light-mid to-transparent dark:from-dark-mid" />
+        </div>
+        <div className="w-1/3">
+          <h1 className="text-3xl">Z Slang</h1>
+        </div>
       </div>
       <div className="bg-high flex h-full w-1/2 items-center justify-end gap-5 px-10">
         {menuItems.map((item) => (
