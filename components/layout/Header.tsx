@@ -40,7 +40,7 @@ const MobileHeader = ({
   return (
     <div className="text-low bg-high fixed inset-x-0 top-0 flex items-center transition-all lg:hidden">
       <div className="bg-mid flex h-14 w-full items-center rounded-br-3xl text-center text-sm font-extrabold leading-loose sm:text-lg md:text-center md:text-xl">
-        <h1 className="mx-auto line-clamp-1 inline-block">GenZ dictionary</h1>
+        <h1 className="mx-auto line-clamp-1 inline-block">Z slang</h1>
       </div>
       <div className="bg-high flex h-14 items-center justify-end gap-5 px-5 sm:px-10">
         {/* change theme mode */}
@@ -88,7 +88,7 @@ const DesktopHeader = ({
   return (
     <div className="bg-high text-low flex h-16 items-center max-lg:hidden">
       <div className="bg-mid flex h-full w-1/2 items-center rounded-br-3xl text-right text-4xl font-extrabold leading-loose max-lg:text-xl">
-        <h1 className="mx-20">GenZ dictionary</h1>
+        <h1 className="mx-20">Z slang</h1>
       </div>
       <div className="bg-high flex h-full w-1/2 items-center justify-end gap-5 px-10">
         {menuItems.map((item) => (
