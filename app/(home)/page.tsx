@@ -1,3 +1,4 @@
+import WOTD from "@/components/WOTD";
 import { IoSearch } from "react-icons/io5";
 export default function Home() {
   return (
@@ -13,7 +14,13 @@ export default function Home() {
           <IoSearch />
         </button>
       </div>
-      <div>{/* something  */}</div>
+      <div className="bg-mid my-10 rounded-lg px-5 py-10">
+        {/* something  */}
+        <h1 className="text-3xl underline">Word of the day</h1>
+        <div>
+          <WOTD />
+        </div>
+      </div>
     </div>
   );
 }
