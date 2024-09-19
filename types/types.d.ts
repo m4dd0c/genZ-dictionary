@@ -10,9 +10,10 @@ interface IThemeContext {
 interface IWord {
   _id: string;
   word: string;
+  pronunciation: string;
   synonym: string;
   type: "spelling" | "abbreviation";
-  full_form: string;
+  full_form?: string | null;
   example: string;
   meaning: string;
   upvotes: number;

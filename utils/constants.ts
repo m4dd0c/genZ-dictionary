@@ -2,8 +2,9 @@ import { IWord } from "@/types/types";
 
 export const words: IWord[] = [
   {
-    _id: "1",
+    _id: "0",
     word: "OOTD",
+    pronunciation: "/ˈɹɪzləɹ/",
     synonym: "Hell",
     type: "abbreviation",
     full_form: "Outfit of the day.",
@@ -13,8 +14,9 @@ export const words: IWord[] = [
     example: "Hey guys look at his ootd; its so mid.",
   },
   {
-    _id: "2",
+    _id: "1",
     word: "GOAT",
+    pronunciation: "/ˈgɪət/",
     synonym: "Hello yeah",
     upvotes: 324445,
     downvotes: 32,
@@ -22,5 +24,17 @@ export const words: IWord[] = [
     full_form: "greatest of all time.",
     meaning: "When someone is all time best in specific field.",
     example: "Virat kohli is GOAT.",
+  },
+  {
+    _id: "2",
+    word: "Rizzler",
+    pronunciation: "/ˈɹɪzləɹ/",
+    synonym: "rizzly bear",
+    upvotes: 324445,
+    downvotes: 32,
+    type: "spelling",
+    meaning:
+      "Someone exceptionally skilled at applying rizz; an expert seducer.",
+    example: "God damn!! Bro is the rizzler!!!",
   },
 ];
