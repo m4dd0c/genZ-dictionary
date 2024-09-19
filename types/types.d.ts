@@ -15,4 +15,6 @@ interface IWord {
   full_form: string;
   example: string;
   meaning: string;
+  upvotes: number;
+  downvotes: number;
 }

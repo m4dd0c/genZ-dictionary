@@ -1,29 +1,9 @@
 import SpellCard from "@/components/SpellCard";
-import { IWord } from "@/types/types";
+import { words } from "@/utils/constants";
 import React from "react";
 import { IoSearch } from "react-icons/io5";
 
 const page = () => {
-  const words: IWord[] = [
-    {
-      _id: "1",
-      word: "OOTD",
-      synonym: "Hell",
-      type: "abbreviation",
-      full_form: "Outfit of the day.",
-      meaning: "When someone shows his/her outfit he/she wearing the day.",
-      example: "Hey guys look at his ootd; its so mid.",
-    },
-    {
-      _id: "2",
-      word: "GOAT",
-      synonym: "Hello yeah",
-      type: "abbreviation",
-      full_form: "greatest of all time.",
-      meaning: "When someone is all time best in specific field.",
-      example: "Virat kohli is GOAT.",
-    },
-  ];
   return (
     <div className="bg-high text-high mx-auto max-w-3xl text-center">
       <h1 className="mb-5 mt-10 text-4xl">Look up for a word</h1>
@@ -37,15 +17,11 @@ const page = () => {
           <IoSearch />
         </button>
       </div>
-      <div className="bg-mid my-10 rounded-lg px-5 py-10">
-        {/* something  */}
-        <h1 className="text-3xl underline">Word of the day</h1>
-        <div>
-          {/* cards */}
-          {words.map((data) => (
-            <SpellCard key={data._id} data={data} />
-          ))}
-        </div>
+      <div className="my-10 px-5">
+        {/* cards */}
+        {words.map((data) => (
+          <SpellCard key={data._id} data={data} />
+        ))}
       </div>
     </div>
   );

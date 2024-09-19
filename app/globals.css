@@ -46,12 +46,6 @@ body::-webkit-scrollbar {
   .bg-min {
     @apply dark:bg-dark-min bg-light-min;
   }
-  .bg-neutral {
-    @apply bg-neutral;
-  }
-  .text-neutral {
-    @apply text-neutral;
-  }
   /*text*/
   .text-high {
     @apply text-dark-high dark:text-light-high;
