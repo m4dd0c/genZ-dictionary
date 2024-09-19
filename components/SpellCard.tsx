@@ -1,5 +1,5 @@
 import { IWord } from "@/types/types";
-import { IoSearch } from "react-icons/io5";
+import { GoThumbsup, GoThumbsdown } from "react-icons/go";
 import React from "react";
 import { decorateNum } from "@/utils";
 const SpellCard = ({ data }: { data: IWord }) => {
@@ -16,11 +16,11 @@ const SpellCard = ({ data }: { data: IWord }) => {
 
       <div className="flex gap-4 text-sm text-neutral">
         <div className="flex items-center gap-1">
-          <IoSearch />
+          <GoThumbsup />
           <p>{decorateNum(data.upvotes)}</p>
         </div>
         <div className="flex items-center gap-1">
-          <IoSearch />
+          <GoThumbsdown />
           <p>{decorateNum(data.downvotes)}</p>
         </div>
       </div>
