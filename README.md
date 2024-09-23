@@ -1,1 +1,3 @@
 # ZSlang
+
+(A GenZDictionary)
